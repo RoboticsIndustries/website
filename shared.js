@@ -15,22 +15,34 @@
     '/contact':     'Contact',
   };
 
+  /* ── resolve href: relative on file://, clean on http ── */
+  const isFile = location.protocol === 'file:';
+  function pageHref(slug) {
+    // slug is like '/work' or '/'
+    if (slug === '/') return isFile ? 'index.html' : '/';
+    const name = slug.replace(/^\//, ''); // 'work'
+    return isFile ? name + '.html' : '/' + name;
+  }
+
   function navHTML() {
     return Object.entries(navLinks).map(([href, label]) => {
       const active = (path === href || (href !== '/' && path.startsWith(href))) ? 'class="active"' : '';
-      return `<a href="${href}.html" ${active}>${label}</a>`;
+      return `<a href="${pageHref(href)}" ${active}>${label}</a>`;
     }).join('');
   }
+
+  const freeReviewHref = isFile ? 'free-review.html' : '/free-review';
+  const contactHref    = isFile ? 'contact.html'     : '/contact';
 
   /* ── inject header ── */
   document.body.insertAdjacentHTML('afterbegin', `
     <div id="announce">
-      Transparent pricing. Ongoing support. No agency fluff.&nbsp;&nbsp;<a href="free-review.html">Get a free review →</a>
+      Transparent pricing. Ongoing support. No agency fluff.&nbsp;&nbsp;<a href="${freeReviewHref}">Get a free review →</a>
     </div>
     <header id="hdr">
       <div class="wrap">
         <nav class="nav">
-          <a href="index.html" class="logo">
+          <a href="${pageHref('/')}" class="logo">
             <div class="logo-mark">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
@@ -41,7 +53,7 @@
           </a>
           <div class="nav-links">${navHTML()}</div>
           <div class="nav-right">
-            <a href="free-review.html" class="btn btn-primary" style="height:42px;padding:0 18px;font-size:14px">Get a free review</a>
+            <a href="${freeReviewHref}" class="btn btn-primary" style="height:42px;padding:0 18px;font-size:14px">Get a free review</a>
             <button class="hamburger" id="ham" aria-label="Open menu">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round">
                 <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
@@ -57,8 +69,8 @@
           <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
-      ${Object.entries(navLinks).map(([href,label]) => `<a href="${href}.html">${label}</a>`).join('')}
-      <a href="contact.html" style="margin-top:16px" class="btn btn-primary">Get in touch</a>
+      ${Object.entries(navLinks).map(([href,label]) => `<a href="${pageHref(href)}">${label}</a>`).join('')}
+      <a href="${contactHref}" style="margin-top:16px" class="btn btn-primary">Get in touch</a>
     </div>
   `);
 
@@ -68,7 +80,7 @@
       <div class="wrap">
         <div class="ftr-grid">
           <div class="ftr-brand">
-            <a href="index.html" class="logo">
+            <a href="${pageHref('/')}" class="logo">
               <div class="logo-mark">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
@@ -91,25 +103,25 @@
           </div>
           <div class="ftr-col">
             <h5>Company</h5>
-            <a href="index.html">Home</a>
-            <a href="work.html">Work</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="how-it-works.html">How It Works</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="${pageHref('/')}">Home</a>
+            <a href="${pageHref('/work')}">Work</a>
+            <a href="${pageHref('/pricing')}">Pricing</a>
+            <a href="${pageHref('/how-it-works')}">How It Works</a>
+            <a href="${pageHref('/about')}">About</a>
+            <a href="${pageHref('/contact')}">Contact</a>
           </div>
           <div class="ftr-col">
             <h5>Legal</h5>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="cookie-policy.html">Cookie Notice</a>
+            <a href="${isFile ? 'privacy.html' : '/privacy'}">Privacy Policy</a>
+            <a href="${isFile ? 'terms.html' : '/terms'}">Terms of Service</a>
+            <a href="${isFile ? 'cookie-policy.html' : '/cookie-policy'}">Cookie Notice</a>
           </div>
         </div>
         <div class="ftr-bottom">
           <p>© 2026 LocalLift. All rights reserved.</p>
           <div class="ftr-legal">
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
+            <a href="${isFile ? 'privacy.html' : '/privacy'}">Privacy</a>
+            <a href="${isFile ? 'terms.html' : '/terms'}">Terms</a>
           </div>
         </div>
       </div>
