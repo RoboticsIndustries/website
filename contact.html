@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact — LocalLift</title>
+<meta name="description" content="Get in touch with LocalLift. We reply within 1 business day."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 380px; gap: 40px; align-items: flex-start; }
+
+/* Form */
+.form-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card); padding: 36px; box-shadow: var(--shadow-md); }
+.form-card h3 { font-size: 20px; margin-bottom: 24px; }
+.field-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.field-group label { font-size: 14px; font-weight: 600; color: var(--navy); }
+.field-group input,
+.field-group select,
+.field-group textarea {
+  font-family: 'Inter', sans-serif; font-size: 15px; color: var(--navy);
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--r-btn);
+  padding: 12px 16px; width: 100%; outline: none;
+  transition: border-color 160ms, box-shadow 160ms;
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder { color: var(--muted); }
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(29,78,216,.12);
+}
+.field-group textarea { resize: vertical; min-height: 100px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-submit { margin-top: 8px; }
+.form-submit .btn { width: 100%; justify-content: center; }
+.form-note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+/* Info panel */
+.info-panel { display: flex; flex-direction: column; gap: 20px; }
+.info-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card); padding: 24px; box-shadow: var(--shadow-sm); }
+.info-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.info-card h4 svg { color: var(--blue); }
+.info-card p, .info-card a { font-size: 15px; color: var(--slate); line-height: 1.65; text-decoration: none; }
+.info-card a:hover { color: var(--blue); }
+.info-card .btn { margin-top: 14px; width: 100%; justify-content: center; }
+
+@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .info-panel { order: -1; } }
+@media (max-width: 640px) { .field-row { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<section class="page-hero" style="background:var(--white)">
+  <div class="wrap">
+    <span class="badge reveal" style="margin-bottom:12px">Contact Us</span>
+    <h1 class="reveal">Get in touch</h1>
+    <p class="reveal">Fill out the form below or email us directly. We'll reply within 1 business day.</p>
+  </div>
+</section>
+
+<section style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="form-card reveal">
+        <h3>Send us a message</h3>
+        <form action="mailto:localliftstudio@gmail.com" method="POST" enctype="text/plain">
+          <div class="field-row">
+            <div class="field-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required/>
+            </div>
+            <div class="field-group">
+              <label for="biz">Business name</label>
+              <input type="text" id="biz" name="business" placeholder="Smith Plumbing"/>
+            </div>
+          </div>
+          <div class="field-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" placeholder="jane@yourbusiness.com" required/>
+          </div>
+          <div class="field-group">
+            <label for="website">Current website (optional)</label>
+            <input type="url" id="website" name="website" placeholder="https://yourbusiness.com"/>
+          </div>
+          <div class="field-group">
+            <label for="plan">Plan you're interested in</label>
+            <select id="plan" name="plan">
+              <option value="">Not sure yet</option>
+              <option value="launch">Launch — $499 setup + $149/mo</option>
+              <option value="growth">Growth — $999 setup + $249/mo</option>
+              <option value="authority">Authority — $1,999 setup + $399/mo</option>
+              <option value="review">Just want a free review first</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="message">What do you need help with?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking for…"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Send message <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          </div>
+          <p class="form-note">We typically reply within 1 business day.</p>
+        </form>
+      </div>
+
+      <div class="info-panel reveal">
+        <div class="info-card">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Email us</h4>
+          <a href="mailto:localliftstudio@gmail.com">localliftstudio@gmail.com</a>
+        </div>
+        <div class="info-card">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Response time</h4>
+          <p>Within 1 business day</p>
+        </div>
+        <div class="info-card">
+          <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a call</h4>
+          <p>Schedule a 15-minute intro call directly with the founders.</p>
+          <a href="https://calendly.com" target="_blank" rel="noopener" class="btn btn-secondary" style="height:42px;font-size:14px">View calendar</a>
+        </div>
+        <div class="info-card" style="background:var(--soft-blue);border-color:var(--badge-blue)">
+          <h4 style="color:var(--blue)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Location</h4>
+       

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>How It Works — LocalLift</title>
+<meta name="description" content="Simple steps, no headaches. Learn how LocalLift builds and maintains your local business website."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+.process-list { display: flex; flex-direction: column; gap: 0; max-width: 820px; }
+.proc-item { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 40px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.proc-item:last-child { border-bottom: none; }
+.proc-left { display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 4px; }
+.proc-num { width: 52px; height: 52px; border-radius: 50%; background: var(--soft-blue); border: 2px solid var(--blue); display: flex; align-items: center; justify-content: center; font-family: 'Manrope', sans-serif; font-size: 20px; font-weight: 800; color: var(--blue); }
+.proc-week { font-size: 11px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .5px; text-align: center; }
+.proc-right h3 { font-size: 22px; margin-bottom: 10px; }
+.proc-right p  { font-size: 16px; color: var(--slate); line-height: 1.75; }
+
+.after-launch { background: var(--soft-blue); border: 1px solid var(--badge-blue); border-radius: var(--r-card); padding: 36px 40px; margin-top: 64px; }
+.after-launch h3 { font-size: 22px; margin-bottom: 12px; }
+.after-launch p  { font-size: 16px; color: var(--slate); line-height: 1.75; max-width: 62ch; margin-bottom: 24px; }
+
+@media (max-width: 640px) {
+  .proc-item { grid-template-columns: 1fr; gap: 16px; }
+  .proc-left { flex-direction: row; gap: 12px; }
+  .after-launch { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<section class="page-hero" style="background:var(--white)">
+  <div class="wrap">
+    <span class="badge reveal" style="margin-bottom:12px">Our Process</span>
+    <h1 class="reveal">Simple steps, no headaches</h1>
+    <p class="reveal">We know you don't have time to manage a web project. We've structured our process to require very little of your time.</p>
+  </div>
+</section>
+
+<section style="background:var(--white)">
+  <div class="wrap">
+    <div class="process-list">
+
+      <div class="proc-item reveal">
+        <div class="proc-left">
+          <div class="proc-num">1</div>
+          <div class="proc-week">Week 1</div>
+        </div>
+        <div class="proc-right">
+          <h3>Review &amp; Planning</h3>
+          <p>We start with a zero-pressure review. You fill out a simple onboarding form. We'll map out your site's structure, gather your logo and photos, and plan the exact pages you need to rank locally.</p>
+        </div>
+      </div>
+
+      <div class="proc-item reveal">
+        <div class="proc-left">
+          <div class="proc-num">2</div>
+          <div class="proc-week">Weeks 2–3</div>
+        </div>
+        <div class="proc-right">
+          <h3>Design &amp; Build</h3>
+          <p>We design a clean, responsive prototype. Instead of sending confusing PDFs, we send you a working link so you can see exactly how it feels on your phone and desktop.</p>
+        </div>
+      </div>
+
+      <div class="proc-item reveal">
+        <div class="proc-left">
+          <div class="proc-num">3</div>
+          <div class="proc-week">Week 4</div>
+        </div>
+        <div class="proc-right">
+          <h3>Revisions &amp; Launch</h3>
+          <p>You review the site. We handle any revisions, attach your custom domain, optimize your performance tags, and make the website live for the world.</p>
+        </div>
+      </div>
+
+      <div class="proc-item reveal">
+        <div class="proc-left">
+          <div class="proc-num">4</div>
+          <div class="proc-week">Monthly</div>
+        </div>
+        <div class="proc-right">
+          <h3>Ongoing Support</h3>
+          <p>We don't abandon you after launch. We handle the hosting, software updates, security, and your monthly content edits so you can just run your business.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="after-launch reveal">
+      <h3>What happens after launch?</h3>
+      <p>Your monthly plan covers our ongoing support. If you need a new photo swapped, hours changed, or a quick testimonial added, just email us. We handle the tech so you don't have to.</p>
+      <a href="pricing.html" class="btn btn-primary">View plans &amp; pricing</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap reveal">
+    <h2>Ready to get started?</h2>
+    <p>Start with a free review — we'll map out exactly what your site needs and which plan fits.</p>
+    <div class="cta-btns">
+      <a href="free-review.html" class="btn btn-white">Get a free review</a>
+      <a href="contact.html" class="btn btn-ghost">Book a quick call</a>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>

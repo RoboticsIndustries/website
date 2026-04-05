@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About — LocalLift</title>
+<meta name="description" content="LocalLift is a student-founded web studio based in Downingtown, Pennsylvania, focused on helping local businesses look more credible online."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+.founders-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 72px; }
+.founder-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card); overflow: hidden; box-shadow: var(--shadow-md); transition: transform 200ms, box-shadow 200ms; }
+.founder-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
+.founder-photo { height: 280px; overflow: hidden; background: var(--cloud); display: flex; align-items: center; justify-content: center; }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.founder-photo-placeholder { width: 90px; height: 90px; border-radius: 50%; background: var(--badge-blue); display: flex; align-items: center; justify-content: center; font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 800; color: var(--blue); }
+.founder-info { padding: 24px 26px; }
+.founder-role { font-size: 12px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
+.founder-info h3 { font-size: 22px; margin-bottom: 10px; }
+.founder-info p  { font-size: 15px; color: var(--slate); line-height: 1.7; }
+
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.value-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card); padding: 28px 24px; box-shadow: var(--shadow-sm); transition: transform 200ms, box-shadow 200ms; }
+.value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.value-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--soft-blue); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.value-icon svg { color: var(--blue); }
+.value-card h4 { font-size: 17px; margin-bottom: 8px; }
+.value-card p  { font-size: 14px; color: var(--slate); line-height: 1.65; }
+
+@media (max-width: 768px) {
+  .founders-grid { grid-template-columns: 1fr; }
+  .values-grid   { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="page-hero" style="background:var(--white)">
+  <div class="wrap">
+    <span class="badge reveal" style="margin-bottom:12px">About Us</span>
+    <h1 class="reveal">We build trust.</h1>
+    <p class="reveal">LocalLift is a web studio based in Downingtown, Pennsylvania, focused on helping local businesses look more credible online with clear, affordable websites and ongoing support.</p>
+  </div>
+</section>
+
+<!-- ── FOUNDERS ── -->
+<section style="background:var(--cloud)">
+  <div class="wrap">
+    <div class="founders-grid">
+
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <img src="https://local-lift-website-phi.vercel.app/images/aryan-mitra.png" alt="Aryan Mitra — Co-Founder, LocalLift"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="founder-photo-placeholder" style="display:none">AM</div>
+        </div>
+        <div class="founder-info">
+          <div class="founder-role">Co-Founder · Technical Director &amp; Design</div>
+          <h3>Aryan Mitra</h3>
+          <p>Designs the websites and manages the technical deployment. Aryan focuses on fast-loading code, clean UI structures, and ensuring your site looks perfect on all unique mobile screens.</p>
+        </div>
+      </div>
+
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <img src="https://local-lift-website-phi.vercel.app/images/kunj-tailor.png" alt="Kunj Tailor — Co-Founder, LocalLift"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="founder-photo-placeholder" style="display:none">KT</div>
+        </div>
+        <div class="founder-info">
+          <div class="founder-role">Co-Founder · Operations &amp; Client Relations</div>
+          <h3>Kunj Tailor</h3>
+          <p>Handles financials, customer relations, and business operations. Kunj ensures that every project stays on track and you are communicated with clearly from day one.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── VALUES ── -->
+    <div class="sec-head reveal">
+      <span class="badge">Why local businesses trust us</span>
+      <h2>What makes us different</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h4>Honest, student-founded hustle</h4>
+        <p>We don't have giant agency overhead or hide behind fake corporate stock photos. You work directly with us, and we are accountable to the results we produce.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+        <h4>Simplicity wins</h4>
+        <p>Local business websites don't need highly animated 3D cubes. They need clear contact info, trust markers, and easy mobile navigation. We strip out the noise.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Fast communication</h4>
+        <p>We know how frustrating it is when web designers disappear. We promise replies to your direct support requests within 1 business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap reveal">
+    <h2>Let's see if we're a good fit.</h2>
+    <p>Start with a quick conversation — no pitch, no pressure.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-white">Get in touch</a>
+      <a href="free-review.html" class="btn btn-ghost">Get a free review first</a>
+    </div>
+  </div>
+</div>
+
+<script src="shared.js"></script>
+</body>
+</html>
